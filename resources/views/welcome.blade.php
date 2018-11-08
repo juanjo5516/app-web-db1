@@ -16,7 +16,7 @@
 <body>
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 		<div class="container">
-			<a class="navbar-brand mr-1" href="/home">MINECO</a>
+			<a class="navbar-brand mr-1" href="/home">{{config('app.name')}}</a>
 			<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#"><i class="fa fa-bars"></i></button>
 			<ul class="navbar-nav ml-auto mr-md-0">
 				@guest
@@ -24,6 +24,7 @@
 				@else
 				<li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
 				@endguest
+				<li class="nav-item"><a href="/integrantes" class="nav-link">Integrantes</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -33,8 +34,12 @@
 			<div class="col-md-12">
 				<div class="jumbotron" id="bienvenida">
 					<h1 class="display-3">Bienvenido</h1>
-					<p>Sistema para gestión de empleados</p>
-					<a href="/login" class="btn btn-primary btn-lg">Iniciar sesión</a>
+					<p>Aplicación web realizada con el framework de desarrollo web "Laravel" versión 5.5.40 para la implementar proyecto de base de datos 1 del grupo # 1 de la Universidad Mariano Gálvez de Guatemala.</p>
+					@guest
+					<a href="/login" class="btn btn-primary btn-lg">Login</a>
+					@else
+					<a href="/home" class="btn btn-primary btn-lg">Ir a la aplicación</a>
+					@endguest
 				</div>
 			</div>
 		</div>

@@ -25,3 +25,7 @@ Route::get('register/verify/{confirmation_code}', 'UserController@verify');
 Route::post('user/complete/{id}','UserController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('integrantes', function(){
+	return view('integrantes');
+});

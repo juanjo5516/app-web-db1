@@ -25,21 +25,22 @@
 			<li>
 				<a href="index.html">
 					<i class="fa fa-users"></i>
-					<span class="nav-label">Empleados</span>
+					<span class="nav-label">Inventario</span>
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/recursos-humanos/empleados">Empleados</a></li>
+					<li><a href="/insumos">Insumos</a></li>
+					<li><a href="/clientes">Clientes</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="index.html">
 					<i class="fa fa-cog"></i>
-					<span class="nav-label">Configuración</span>
+					<span class="nav-label">Integrantes</span>
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/recursos-humanos/configuraciones/genero">Generos</a></li>
+					<li><a href="/integrantes">Listado de integrantes</a></li>
 				</ul>
 			</li>
 		</ul>

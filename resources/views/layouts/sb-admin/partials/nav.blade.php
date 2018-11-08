@@ -4,30 +4,6 @@
     <i class="fa fa-bars"></i>
   </button>
   <ul class="navbar-nav ml-auto mr-md-0">
-    <li class="nav-item dropdown no-arrow mx-1">
-      <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-bell fa-fw fa-lg"></i>
-        <span class="badge badge-danger">9+</span>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-        <a class="dropdown-item" href="#">Notificación 1</a>
-        <a class="dropdown-item" href="#">Notificación 2</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Ver todo...</a>
-      </div>
-    </li>
-    <li class="nav-item dropdown no-arrow mx-1">
-      <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-envelope fa-fw fa-lg"></i>
-        <span class="badge badge-danger">7</span>
-      </a>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-        <a class="dropdown-item" href="#">Mensaje 1</a>
-        <a class="dropdown-item" href="#">Mensaje 2</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Ver todo...</a>
-      </div>
-    </li>
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-user-circle fa-fw fa-lg"></i>
