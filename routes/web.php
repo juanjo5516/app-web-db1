@@ -29,3 +29,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('integrantes', function(){
 	return view('integrantes');
 });
+
+Route::resource('insumo','InsumoController');
