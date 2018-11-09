@@ -15,8 +15,12 @@ class InsumoController extends Controller
      */
     public function index()
     {
-        $insumos = Insumo::all();
-        return view('insumos.index',compact('insumos'));
+        return \DataTables::of(Insumo::
+            select('insumo.id_insumo', 'insumo.id_lote', 'insumo.nombre', 'insumo.id_laboratorio', 'departamentos.existencia', 'municipios.municipio')
+            ->join('departamentos', 'departamentos.id', '=','insumo.departamento_id')
+            ->join('municipios', 'municipios.id', '=','insumo.municipio_id')
+            ->get()
+        )->make(true);
     }
 
     /**
@@ -26,7 +30,7 @@ class InsumoController extends Controller
      */
     public function create()
     {
-        return view('insumos.create');
+        //
     }
 
     /**
@@ -38,8 +42,8 @@ class InsumoController extends Controller
     public function store(Request $request)
     {
         //dump($request);
-        DB::executeProcedure('PAQUETE_INSUMO.AGREGAR_INSUMO', ['ID_INSUMO'=>$request->ID_INSUMO,'ID_LOTE'=>$request->ID_LOTE,'NOMBRE'=>$request->NOMBRE,'ID_LABORATORIO'=>$request->ID_LABORATORIO,'EXISTENCIA'=>$request->EXISTENCIA]);
-        return redirect('/insumo');
+        DB::executeProcedure('PAQUETE_INSUMO.AGREGAR_INSUMO', ['ID_LOTE'=>$request->ID_LOTE,'NOMBRE'=>$request->NOMBRE,'ID_LABORATORIO'=>$request->ID_LABORATORIO,'EXISTENCIA'=>$request->EXISTENCIA]);
+        return redirect('/insumos');
     }
 
     /**
@@ -50,7 +54,7 @@ class InsumoController extends Controller
      */
     public function show(Insumo $insumo)
     {
-        //
+        return view('insumos.show', compact('insumo'));
     }
 
     /**

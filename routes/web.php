@@ -30,4 +30,4 @@ Route::get('integrantes', function(){
 	return view('integrantes');
 });
 
-Route::resource('insumo','InsumoController');
+Route::resource('insumos','InsumoController');
