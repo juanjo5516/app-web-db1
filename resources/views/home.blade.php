@@ -16,10 +16,10 @@
 		<div class="col-md-4">
 			<div class="widget style1 navy-bg">
 				<div class="row">
-					<div class="col-xs-4"><i class="fa fa-cloud fa-5x"></i></div>
+					<div class="col-xs-4"><i class="fa fa-cart-arrow-down fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
-						<span> Total de empleados registrados</span>
-						<h2>5</h2>
+						<span> Insumos</span>
+						<h2>{{App\Models\Insumo::count()}}</h2>
 					</div>
 				</div>
 			</div>
@@ -27,10 +27,10 @@
 		<div class="col-md-4">
 			<div class="widget style1 lazur-bg">
 				<div class="row">
-					<div class="col-xs-4"><i class="fa fa-cloud fa-5x"></i></div>
+					<div class="col-xs-4"><i class="fa fa-building-o fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
-						<span> Total de empleados registrados</span>
-						<h2>5</h2>
+						<span> Laboratorios</span>
+						<h2>{{App\Models\Laboratorio::count()}}</h2>
 					</div>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 		<div class="col-md-4">
 			<div class="widget style1 yellow-bg">
 				<div class="row">
-					<div class="col-xs-4"><i class="fa fa-cloud fa-5x"></i></div>
+					<div class="col-xs-4"><i class="fa fa-users fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
-						<span> Total de empleados registrados</span>
-						<h2>5</h2>
+						<span> Usuarios</span>
+						<h2>{{App\User::count()}}</h2>
 					</div>
 				</div>
 			</div>

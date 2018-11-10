@@ -31,3 +31,6 @@ Route::get('integrantes', function(){
 });
 
 Route::resource('insumos','InsumoController');
+Route::get('getInsumos','InsumoController@getInsumos')->name('getInsumos');
+
+Route::resource('bitacora','BitacoraController');

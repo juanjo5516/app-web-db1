@@ -30,7 +30,6 @@
 				</a>
 				<ul class="nav nav-second-level">
 					<li><a href="/insumos">Insumos</a></li>
-					<li><a href="/clientes">Clientes</a></li>
 				</ul>
 			</li>
 			<li>

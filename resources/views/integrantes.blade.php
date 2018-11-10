@@ -28,22 +28,22 @@
 				</tr>
 				<tr>
 					<td>2</td>
+					<td>3190-16-13214</td>
+					<td>Elvin Emmanuel Delgado Gómez</td>
+					<td>A</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>3</td>
 					<td>3190-16-3648</td>
 					<td>Juan José Del Aguila López</td>
 					<td>A</td>
 					<td>1</td>
 				</tr>
 				<tr>
-					<td>3</td>
-					<td>Pendiente</td>
-					<td>Mario Matias (mmmmmmmmm...)</td>
-					<td>A</td>
-					<td>1</td>
-				</tr>
-				<tr>
 					<td>4</td>
-					<td>Pendiente</td>
-					<td>Emanuel</td>
+					<td>3190-16-1677</td>
+					<td>Mario José Matías Tomás</td>
 					<td>A</td>
 					<td>1</td>
 				</tr>

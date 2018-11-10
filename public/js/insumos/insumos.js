@@ -4,93 +4,67 @@
 */
 
 // Variables
-var tbl_insumos = $('#tbl_residencias').DataTable({
-	"ajax": `http://localhost/insumos/${id}`,
+var tbl_insumos = $('#tbl_insumos').DataTable({
+	"ajax": `http://localhost/getInsumos`,
 	"columns": [
-	{"data":"id", "name": "id"},
-	{"data":"direccion", "name": "direccion"},
-	{"data":"zona_id", "name": "zona_id"},
-	{"data":"colonia", "name": "colonia"},
-	{"data":"departamento", "name": "departamento"},
-	{"data":"municipio", "name": "municipio"},
+	{"data":"id_insumo", "name": "id_insumo"},
+	{"data":"id_lote", "name": "id_lote"},
+	{"data":"nombre", "name": "nombre"},
+	{"data":"laboratorio", "name": "laboratorio"},
+	{"data":"existencia", "name": "existencia"},
 	{"defaultContent": `<button class="editar btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"></i></button> <button class="eliminar btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>`}
 	],
 	"language" : idioma_espanol
 });
 
 // Escuchador de eventos (editar y eliminar)
-function eventoEditarResidencia() {
-	$("#tbl_residencias tbody").on("click", "button.editar", function(){
-		data = tbl_residencias.row($(this).parents("tr")).data();
-		idRow = tbl_residencias.row($(this).parents("tr")).index();
-		tituloModal("#title_modal_residencias", "Editar residencia");
-		$("#boton_editar_residencia").css('display', 'block').siblings('#boton_guardar_residencia').css('display','none');
-		visibilidadModal("#modal_residencias", "show");
-		$("#direccion").val(data.direccion);
-		$('#zona_id').val(data.zona_id);
-		$("#colonia").val(data.colonia);
-		$('#departamento_id').val($(`#departamento_id option:contains("${data.departamento}")`).val());
-		setSelectModal("#departamento_id", "#municipio_id", "/recursos-humanos/getMunicipios");
+function eventoEditarInsumo() {
+	$("#tbl_insumos tbody").on("click", "button.editar", function(){
+		data = tbl_insumos.row($(this).parents("tr")).data();
+		idRow = tbl_insumos.row($(this).parents("tr")).index();
+		tituloModal("#title_modal_insumos", "Editar insumo");
+		$("#boton_editar_insumo").css('display', 'block').siblings('#boton_guardar_insumo').css('display','none');
+		visibilidadModal("#modal_insumos", "show");
+		$("#id_lote").val(data.id_lote);
+		$('#nombre').val(data.nombre);
+		$('#id_laboratorio').val($(`#id_laboratorio option:contains("${data.laboratorio}")`).val());
+		$("#existencia").val(data.existencia);
 	});
 }
 
-function eventoEliminarResidencia() {
-	$("#tbl_residencias tbody").on("click", "button.eliminar", function(){
-		data = tbl_residencias.row($(this).parents("tr")).data();
-		idRow = tbl_residencias.row($(this).parents("tr")).index();
-		$("#info-eliminar-residencia").html(data.direccion);
-		visibilidadModal("#modal_residencias_eliminar", "show");
+function eventoEliminarInsumo() {
+	$("#tbl_insumos tbody").on("click", "button.eliminar", function(){
+		data = tbl_insumos.row($(this).parents("tr")).data();
+		idRow = tbl_insumos.row($(this).parents("tr")).index();
+		$("#info-eliminar-insumo").html(data.nombre);
+		visibilidadModal("#modal_insumos_eliminar", "show");
 	});	
 }
 
 // Click en botones (crear, editar y eliminar)
-function clickBotonNuevoResidencia() {
+function clickBotonNuevoInsumo() {
 	$('button.nuevo').click(function(){
-		tituloModal("#title_modal_residencias", "Crear residencia");
-		limpiarFormulario("#form_residencias");
-		$("#boton_guardar_residencia").css('display', 'block').siblings('#boton_editar_residencia').css('display','none');
+		tituloModal("#title_modal_insumos", "Crear insumo");
+		limpiarFormulario("#form_insumos");
+		$("#boton_guardar_insumo").css('display', 'block').siblings('#boton_editar_insumo').css('display','none');
 	});
 }
 
-function clickBotonGuardarResidencia() {
-	$("#boton_guardar_residencia").click(function(){
-		crear(tbl_residencias, "#modal_residencias", "#form_residencias", "POST", `http://localhost/recursos-humanos/empleados/${idEmpleado}/residencias`, 'Residencia creada exitosamente');
+function clickBotonGuardarInsumo() {
+	$("#boton_guardar_insumo").click(function(){
+		crear(tbl_insumos, "#modal_insumos", "#form_insumos", "POST", `http://localhost/insumos`, 'Insumo creado exitosamente');
 	});
 }
 
-function clickBotonEditarResidencia() {
-	$("#boton_editar_residencia").click(function(){
-		editar(tbl_residencias, "#modal_residencias", "#form_residencias", "PUT", `http://localhost/recursos-humanos/empleados/${idEmpleado}/residencias/${data.id}`, `Residencia ${data.id} actualizada exitosamente`);
+function clickBotonEditarInsumo() {
+	$("#boton_editar_insumo").click(function(){
+		editar(tbl_insumos, "#modal_insumos", "#form_insumos", "PUT", `http://localhost/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} actualizado exitosamente`);
 	});
 }
 
-function clickBotonEliminarResidencia() {
-	$("#boton_eliminar_residencia").click(function(){
-		visibilidadModal("#modal_residencias_eliminar","toggle");
-		eliminar(tbl_residencias, "#form_residencias", "DELETE", `http://localhost/recursos-humanos/empleados/${idEmpleado}/residencias/${data.id}`, `Residencia ${data.id} eliminada exitosamente`);
+function clickBotonEliminarInsumo() {
+	$("#boton_eliminar_insumo").click(function(){
+		visibilidadModal("#modal_insumos_eliminar","toggle");
+		eliminar(tbl_insumos, "#form_insumos", "DELETE", `http://localhost/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} eliminado exitosamente`);
 	});	
-}
-
-// Muestra municipio al seleccionar un departamento
-function setSelectResidencia(idSelectPadre, idSelectHijo, ruta) {
-	$(idSelectPadre).change(event => {
-		$.get(`${ruta}/${event.target.value}`, function (municipios) {
-			cadena = "<option value=''></option>";
-			municipios.forEach(municipio => {
-				cadena += `<option value="${municipio.id}">${municipio.municipio}</option>`;
-			});
-			$(idSelectHijo).html(cadena);
-		});
-	});
-}
-
-function setSelectModal(idSelectPadre, idSelectHijo, ruta) {
-	$.get(`${ruta}/${$(idSelectPadre).val()}`, function (municipios) {
-		cadena = "<option value=''></option>";
-		municipios.forEach(municipio => {
-			cadena += `<option value="${municipio.id}">${municipio.municipio}</option>`;
-		});
-		$(idSelectHijo).html(cadena);
-		$(idSelectHijo).val($(`${idSelectHijo} option:contains("${data.municipio}")`).val());
-	});
 }

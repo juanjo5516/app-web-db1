@@ -1,5 +1,5 @@
 @extends('layouts.sb-admin.app')
-@section('titulo','Agregar insumo')
+@section('titulo','Insumos')
 @include('insumos.menus')
 @section('content')
 <ol class="breadcrumb">
@@ -23,8 +23,10 @@
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Contacto</th>
-							<th>Medio contacto</th>
+							<th>Número de lote</th>
+							<th>Nombre insumo</th>
+							<th>Laboratorio</th>
+							<th>Existencia</th>
 							<th>Acción</th>
 						</tr>
 					</thead>
@@ -43,19 +45,19 @@
 				<form method="POST" id="form_insumos" onsubmit="event.preventDefault(); return false" autocomplete="off">
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="id_lote">ID LOTE</label>
+							<label for="id_lote">Número de lote <strong class="text-danger">*</strong></label>
 							<input type="number" class="form-control" id="id_lote" name="id_lote" required>
 						</div>
 						<div class="form-group">
-							<label for="nombre">NOMBRE INSUMO</label>
+							<label for="nombre">Insumo <strong class="text-danger">*</strong></label>
 							<input type="text" class="form-control" id="nombre" name="nombre" required>
 						</div>
 						<div class="form-group">
-							<label for="id_laboratorio">ID LABORATORIO</label>
-							<input type="number" class="form-control" id="id_laboratorio" name="id_laboratorio" required>
+							<label for="nombre">Laboratorio <strong class="text-danger">*</strong></label>
+							{!! Form::select('id_laboratorio', App\Models\Laboratorio::pluck('nombre','id_laboratorio'), null, ['class' => 'form-control', 'placeholder' => '', 'required', 'id'=>'id_laboratorio', 'name'=>'id_laboratorio']) !!}
 						</div>
 						<div class="form-group">
-							<label for="existencia">EXISTENCIA</label>
+							<label for="existencia">Existencia <strong class="text-danger">*</strong></label>
 							<input type="number" class="form-control" id="existencia" name="existencia" required>
 						</div>
 					</div>
@@ -77,7 +79,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 				<div class="modal-body">
-					¿Está seguro de eliminar: <strong id="info-eliminar-contacto"></strong>?
+					¿Está seguro de eliminar: <strong id="info-eliminar-insumo"></strong>?
 				</div>
 				<div class="modal-footer">
 					<button class="btn btn-danger" id="boton_eliminar_insumo">Si, eliminar</button>
@@ -89,11 +91,8 @@
 </div>
 @endsection
 @section('scripts-personalizados')
-<script>
-	var id = '{{$insumo->id}}';
-</script>
 <script src="{{ asset('js/funciones.js') }}"></script>
-<script src="{{ asset('js/rrhh/insumos.js') }}"></script>
+<script src="{{ asset('js/insumos/insumos.js') }}"></script>
 <script>
 /* -------------------------------------------------------------------
 * | Escuchador de eventos
@@ -101,12 +100,12 @@
 */
 
 $(document).ready(function(){
-	eventoEditarContacto();
-	eventoEliminarContacto();
-	clickBotonNuevoContacto();
-	clickBotonEditarContacto();
-	clickBotonGuardarContacto();
-	clickBotonEliminarContacto();
+	eventoEditarInsumo();
+	eventoEliminarInsumo();
+	clickBotonNuevoInsumo();
+	clickBotonEditarInsumo();
+	clickBotonGuardarInsumo();
+	clickBotonEliminarInsumo();
 
 });
 
