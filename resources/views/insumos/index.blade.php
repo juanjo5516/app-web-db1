@@ -35,7 +35,7 @@
 		{"data":"nombre", "name": "nombre"},
 		{"data":"laboratorio", "name": "laboratorio"},
 		{"data":"existencia", "name": "existencia"},
-		{"defaultContent": `<button class="ver btn btn-info btn-sm"><i class="fa fa-eye"></i></button>`}
+		{"defaultContent": `<button class="ver btn btn-primary btn-sm"><i class="fa fa-eye"></i></button>`}
 		],
 		"language" : idioma_espanol
 	});
