@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<button class="nuevo btn btn-primary float-right" data-toggle="modal" data-target="#modal_insumos"><i class="fa fa-plus"></i></button>
-			<h2><i class="fa fa-book"></i> Insumos</h2>
+			<h2><i class="fa fa-cart-arrow-down"></i> Insumos</h2>
 			<br>
 			<div class="table-responsive">
 				<table class="table table-hover" id="tbl_insumos" style="width:100%">
