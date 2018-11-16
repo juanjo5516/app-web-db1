@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'confirmation_code' => $confirmation_code,
         ]);
 
-        Mail::to($user)->cc('dhernandez0032@gmail.com')->send(new EmailConfirmation($user));
+        //Mail::to($user)->cc('dhernandez0032@gmail.com')->send(new EmailConfirmation($user));
 
         return $user;
     }

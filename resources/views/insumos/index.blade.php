@@ -28,7 +28,7 @@
 <script src="{{ asset('js/integrantes.js') }}"></script>
 <script>
 	var tbl_insumos = $('#tbl_insumos').DataTable({
-		"ajax": `http://localhost/getInsumos`,
+		"ajax": `http://localhost:8000/getInsumos`,
 		"columns": [
 		{"data":"id_insumo", "name": "id_insumo"},
 		{"data":"id_lote", "name": "id_lote"},
@@ -42,7 +42,7 @@
 
 	$("#tbl_insumos tbody").on("click", "button.ver", function(){
 		data = tbl_insumos.row($(this).parents("tr")).data();
-		$(location).attr('href',`http://localhost/insumos/${data.id_insumo}`);
+		$(location).attr('href',`http://localhost:8000/insumos/${data.id_insumo}`);
 	});
 </script>
 @endsection

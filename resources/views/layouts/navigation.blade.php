@@ -30,10 +30,21 @@
 				</a>
 				<ul class="nav nav-second-level">
 					<li><a href="/insumos">Insumos</a></li>
+					<li><a href="/laboratorios">Laboratorios</a></li>
 				</ul>
 			</li>
 			<li>
-				<a href="index.html">
+				<a href="#">
+					<i class="fa fa-history"></i>
+					<span class="nav-label">Bitacora</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li><a href="/bitacora">Ver bitácora</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
 					<i class="fa fa-cog"></i>
 					<span class="nav-label">Integrantes</span>
 					<span class="fa arrow"></span>

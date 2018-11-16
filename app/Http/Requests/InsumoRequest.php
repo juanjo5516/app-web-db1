@@ -24,10 +24,10 @@ class InsumoRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_lote' => 'required',
-            'nombre' => 'required|String|unique:insumo',
-            'id_laboratorio' => 'required',
-            'existencia' => 'required'
+            'ID_LOTE' => 'required',
+            'NOMBRE' => 'required|String|unique:insumo',
+            'ID_LABORATORIO' => 'required',
+            'EXISTENCIA' => 'required'
         ];
     }
 }
