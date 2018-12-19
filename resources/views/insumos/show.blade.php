@@ -2,22 +2,12 @@
 @section('titulo','Insumos')
 @include('insumos.menus')
 @section('content')
-<ol class="breadcrumb">
-	<li class="breadcrumb-item">
-		<a href="/home">home</a>
-	</li>
-	<li class="breadcrumb-item">
-		<a href="/recursos-humanos/empleados">empleados</a>
-	</li>
-	<li class="breadcrumb-item active">show</li>
-</ol>
 <div class="alert alert-success" role="alert" id="mensaje" style="display: none;"></div>
 <div class="container shadow p-3 mb-5 bg-white rounded">
 	<div class="row">
 		<div class="col-md-12">
 			<button class="nuevo btn btn-primary float-right" data-toggle="modal" data-target="#modal_insumos"><i class="fa fa-plus"></i></button>
 			<h2><i class="fa fa-cart-arrow-down"></i> Insumos</h2>
-			<br>
 			<div class="table-responsive">
 				<table class="table table-hover" id="tbl_insumos" style="width:100%">
 					<thead>
@@ -44,21 +34,22 @@
 				</div>
 				<form method="POST" id="form_insumos" onsubmit="event.preventDefault(); return false" autocomplete="off">
 					<div class="modal-body">
+						<input type="hidden" name="ID" id="ID">
 						<div class="form-group">
-							<label for="id_lote">Número de lote <strong class="text-danger">*</strong></label>
-							<input type="number" class="form-control" id="id_lote" name="id_lote" required>
+							<label for="ID_LOTE">Número de lote <strong class="text-danger">*</strong></label>
+							<input type="number" class="form-control" id="ID_LOTE" name="ID_LOTE" required>
 						</div>
 						<div class="form-group">
-							<label for="nombre">Insumo <strong class="text-danger">*</strong></label>
-							<input type="text" class="form-control" id="nombre" name="nombre" required>
+							<label for="NOMBRE">Insumo <strong class="text-danger">*</strong></label>
+							<input type="text" class="form-control" id="NOMBRE" name="NOMBRE" required>
 						</div>
 						<div class="form-group">
-							<label for="nombre">Laboratorio <strong class="text-danger">*</strong></label>
-							{!! Form::select('id_laboratorio', App\Models\Laboratorio::pluck('nombre','id_laboratorio'), null, ['class' => 'form-control', 'placeholder' => '', 'required', 'id'=>'id_laboratorio', 'name'=>'id_laboratorio']) !!}
+							<label for="ID_LABORATORIO">Laboratorio <strong class="text-danger">*</strong></label>
+							{!! Form::select('ID_LABORATORIO', App\Models\Laboratorio::pluck('nombre','id_laboratorio'), null, ['class' => 'form-control', 'placeholder' => '', 'required', 'id'=>'ID_LABORATORIO', 'name'=>'ID_LABORATORIO']) !!}
 						</div>
 						<div class="form-group">
-							<label for="existencia">Existencia <strong class="text-danger">*</strong></label>
-							<input type="number" class="form-control" id="existencia" name="existencia" required>
+							<label for="EXISTENCIA">Existencia <strong class="text-danger">*</strong></label>
+							<input type="number" class="form-control" id="EXISTENCIA" name="EXISTENCIA" required>
 						</div>
 					</div>
 					<div class="modal-footer">

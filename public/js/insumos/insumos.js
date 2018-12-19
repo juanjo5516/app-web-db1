@@ -5,7 +5,7 @@
 
 // Variables
 var tbl_insumos = $('#tbl_insumos').DataTable({
-	"ajax": `http://localhost/getInsumos`,
+	"ajax": `http://localhost:8000/getInsumos`,
 	"columns": [
 	{"data":"id_insumo", "name": "id_insumo"},
 	{"data":"id_lote", "name": "id_lote"},
@@ -25,10 +25,11 @@ function eventoEditarInsumo() {
 		tituloModal("#title_modal_insumos", "Editar insumo");
 		$("#boton_editar_insumo").css('display', 'block').siblings('#boton_guardar_insumo').css('display','none');
 		visibilidadModal("#modal_insumos", "show");
-		$("#id_lote").val(data.id_lote);
-		$('#nombre').val(data.nombre);
-		$('#id_laboratorio').val($(`#id_laboratorio option:contains("${data.laboratorio}")`).val());
-		$("#existencia").val(data.existencia);
+		$("#ID").val(data.id_insumo);
+		$("#ID_LOTE").val(data.id_lote);
+		$('#NOMBRE').val(data.nombre);
+		$('#ID_LABORATORIO').val($(`#ID_LABORATORIO option:contains("${data.laboratorio}")`).val());
+		$("#EXISTENCIA").val(data.existencia);
 	});
 }
 
@@ -52,19 +53,19 @@ function clickBotonNuevoInsumo() {
 
 function clickBotonGuardarInsumo() {
 	$("#boton_guardar_insumo").click(function(){
-		crear(tbl_insumos, "#modal_insumos", "#form_insumos", "POST", `http://localhost/insumos`, 'Insumo creado exitosamente');
+		crear(tbl_insumos, "#modal_insumos", "#form_insumos", "POST", `http://localhost:8000/insumos`, 'Insumo creado exitosamente');
 	});
 }
 
 function clickBotonEditarInsumo() {
 	$("#boton_editar_insumo").click(function(){
-		editar(tbl_insumos, "#modal_insumos", "#form_insumos", "PUT", `http://localhost/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} actualizado exitosamente`);
+		editar(tbl_insumos, "#modal_insumos", "#form_insumos", "PUT", `http://localhost:8000/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} actualizado exitosamente`);
 	});
 }
 
 function clickBotonEliminarInsumo() {
 	$("#boton_eliminar_insumo").click(function(){
 		visibilidadModal("#modal_insumos_eliminar","toggle");
-		eliminar(tbl_insumos, "#form_insumos", "DELETE", `http://localhost/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} eliminado exitosamente`);
+		eliminar(tbl_insumos, "#form_insumos", "DELETE", `http://localhost:8000/insumos/${data.id_insumo}`, `Insumo ${data.id_insumo} eliminado exitosamente`);
 	});	
 }

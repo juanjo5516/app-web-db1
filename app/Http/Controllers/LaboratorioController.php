@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bitacora;
 use Illuminate\Http\Request;
+use App\Models\Laboratorio;
 
-class BitacoraController extends Controller
+class LaboratorioController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -24,8 +14,12 @@ class BitacoraController extends Controller
      */
     public function index()
     {
-        $bitacoras = Bitacora::all();
-        return view('insumos.bitacora',compact('bitacoras'));
+        return view('insumos.laboratorios');
+    }
+
+    public function getLaboratorios()
+    {
+        return \DataTables::of(Laboratorio::select('lab_farmaceuticos_insumos.id_laboratorio','lab_farmaceuticos_insumos.nombre')->get())->make(true);
     }
 
     /**
@@ -52,10 +46,10 @@ class BitacoraController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bitacora  $bitacora
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Bitacora $bitacora)
+    public function show($id)
     {
         //
     }
@@ -63,10 +57,10 @@ class BitacoraController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Bitacora  $bitacora
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bitacora $bitacora)
+    public function edit($id)
     {
         //
     }
@@ -75,10 +69,10 @@ class BitacoraController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bitacora  $bitacora
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bitacora $bitacora)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -86,10 +80,10 @@ class BitacoraController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bitacora  $bitacora
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bitacora $bitacora)
+    public function destroy($id)
     {
         //
     }

@@ -1,11 +1,10 @@
-@extends('layouts.bootstrap4')
+@extends('layouts.sb-admin.app')
 @section('titulo','Integrantes')
+@include('insumos.menus')
 @section('content')
-<br>
-<br>
-<h2><i class="fa fa-users"></i> Integrantes grupo número 1</h2>
-<br>
 <div class="container shadow p-3 mb-5 bg-white rounded">
+	<br>
+<h2><i class="fa fa-users"></i> Integrantes grupo número 1</h2>
 	<br>
 	<div class="table-responsive">
 		<table class="table table-hover" id="tbl_integrantes" style="width:100%">
@@ -52,7 +51,7 @@
 	</div>
 </div>
 @endsection
-@section('script')
+@section('scripts-personalizados')
 <script src="{{ asset('js/funciones.js') }}"></script>
 <script src="{{ asset('js/integrantes.js') }}"></script>
 @endsection
