@@ -23,34 +23,80 @@
 				<div class="logo-element">MINE</div>
 			</li>
 			<li>
-				<a href="index.html">
+				<a href="#">
+					<i class="fa fa-group"></i>
+					<span class="nav-label">Citas</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-heartbeat"></i>
+					<span class="nav-label">Signos Vitales</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-building-o"></i>
+					<span class="nav-label">Laboratorios</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			<li>
+				<a href="#">
 					<i class="fa fa-users"></i>
-					<span class="nav-label">Inventario</span>
+					<span class="nav-label">Pacientes</span>
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/insumos">Insumos</a></li>
-					<li><a href="/laboratorios">Laboratorios</a></li>
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
 				</ul>
 			</li>
 			<li>
 				<a href="#">
-					<i class="fa fa-history"></i>
-					<span class="nav-label">Bitacora</span>
+					<i class="fa fa-money"></i>
+					<span class="nav-label">Caja</span>
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/bitacora">Ver bitácora</a></li>
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
 				</ul>
 			</li>
 			<li>
 				<a href="#">
-					<i class="fa fa-cog"></i>
-					<span class="nav-label">Integrantes</span>
+					<i class="fa fa-medkit"></i>
+					<span class="nav-label">Farmacia</span>
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/integrantes">Listado de integrantes</a></li>
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-flag"></i>
+					<span class="nav-label">Ofertas</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
 				</ul>
 			</li>
 		</ul>
