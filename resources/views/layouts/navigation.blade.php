@@ -90,6 +90,18 @@
 			</li>
 			<li>
 				<a href="#">
+					<i class="fa fa-building-o"></i>
+					<span class="nav-label">Bodega</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li><a href="/insumos">Categorias</a></li>
+					<li><a href="/insumos">Productos</a></li>
+					<li><a href="/insumos">Inventario</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
 					<i class="fa fa-flag"></i>
 					<span class="nav-label">Ofertas</span>
 					<span class="fa arrow"></span>
