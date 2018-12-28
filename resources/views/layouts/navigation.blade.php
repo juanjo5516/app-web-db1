@@ -22,6 +22,7 @@
 				</div>
 				<div class="logo-element">MINE</div>
 			</li>
+			@if(Auth::user()->rol_id == 1)
 			<li>
 				<a href="#">
 					<i class="fa fa-group"></i>
@@ -95,9 +96,9 @@
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					<li><a href="/insumos">Categorias</a></li>
-					<li><a href="/insumos">Productos</a></li>
-					<li><a href="/insumos">Inventario</a></li>
+					<li><a href="/configuracion/categorias">Categorias</a></li>
+					<li><a href="/configuracion/productos">Productos</a></li>
+					<li><a href="/bodega/inventario">Inventario</a></li>
 				</ul>
 			</li>
 			<li>
@@ -111,6 +112,65 @@
 					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
 				</ul>
 			</li>
+			@elseif(Auth::user()->rol_id == 2)
+			<li>
+				<a href="#">
+					<i class="fa fa-building-o"></i>
+					<span class="nav-label">Bodega</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li><a href="/configuracion/categorias">Categorias</a></li>
+					<li><a href="/configuracion/productos">Productos</a></li>
+					<li><a href="/bodega/inventario">Inventario</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-flag"></i>
+					<span class="nav-label">Ofertas</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			@elseif(Auth::user()->rol_id == 3)
+			<li>
+				<a href="#">
+					<i class="fa fa-group"></i>
+					<span class="nav-label">Citas</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					<li><a href="/insumos">Crear Cita</a></li>
+					<li><a href="/insumos">Ver citas</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-heartbeat"></i>
+					<span class="nav-label">Signos Vitales</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			<li>
+				<a href="#">
+					<i class="fa fa-building-o"></i>
+					<span class="nav-label">Laboratorios</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level">
+					{{-- <li><a href="/insumos">Insumos</a></li> --}}
+					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+				</ul>
+			</li>
+			@endif
 		</ul>
 	</div>
 </nav>

@@ -11,4 +11,10 @@
 	<link rel="stylesheet" href="{{ asset('dataTables/datatables.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('sb-admin/css/sb-admin.css') }}">
 	<link rel="stylesheet" href="{{ asset('font-awesome/css/font-awesome.min.css')}}">
+	<style>
+		.obligatorio{
+			font: bold;
+			color: red;
+		}
+	</style>
 </head>

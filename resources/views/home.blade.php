@@ -3,7 +3,8 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
 	<div class="col-lg-10">
-		<h2>Bienvenido</h2>
+		<h2>Bienvenido {{Auth::user()->name }}</h2>
+		<h3>Rol: {{Auth::user()->rol()->first()->rol}}</h3>
 		<ol class="breadcrumb">
 			<li class="active">
 				<a href="/home"><strong>/home</strong></a>

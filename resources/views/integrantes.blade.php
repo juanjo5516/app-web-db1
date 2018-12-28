@@ -1,6 +1,5 @@
 @extends('layouts.sb-admin.app')
 @section('titulo','Integrantes')
-@include('insumos.menus')
 @section('content')
 <div class="container shadow p-3 mb-5 bg-white rounded">
 	<br>

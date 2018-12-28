@@ -44,3 +44,11 @@ Route::get('getInsumos','InsumoController@getInsumos')->name('getInsumos');
 Route::resource('laboratorios','LaboratorioController');
 Route::get('getLaboratorios','LaboratorioController@getLaboratorios')->name('getLaboratorios');
 Route::resource('bitacora','BitacoraController');
+
+
+// Rutas de configuración
+Route::resource('configuracion/categorias', 'CategoriaController');
+Route::resource('configuracion/productos', 'ProductoController');
+
+// Rutas de módulos
+Route::resource('bodega/inventario', 'InventarioController');
