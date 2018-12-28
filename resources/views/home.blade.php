@@ -19,7 +19,6 @@
 					<div class="col-xs-4"><i class="fa fa-cart-arrow-down fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
 						<span> Insumos</span>
-						<h2>{{App\Models\Insumo::count()}}</h2>
 					</div>
 				</div>
 			</div>
@@ -30,7 +29,7 @@
 					<div class="col-xs-4"><i class="fa fa-building-o fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
 						<span> Laboratorios</span>
-						<h2>{{App\Models\Laboratorio::count()}}</h2>
+						
 					</div>
 				</div>
 			</div>
@@ -41,7 +40,7 @@
 					<div class="col-xs-4"><i class="fa fa-users fa-5x"></i></div>
 					<div class="col-xs-8 text-right">
 						<span> Usuarios</span>
-						<h2>{{App\User::count()}}</h2>
+						
 					</div>
 				</div>
 			</div>

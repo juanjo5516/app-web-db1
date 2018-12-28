@@ -29,8 +29,8 @@
 					<span class="fa arrow"></span>
 				</a>
 				<ul class="nav nav-second-level">
-					{{-- <li><a href="/insumos">Insumos</a></li> --}}
-					{{-- <li><a href="/laboratorios">Laboratorios</a></li> --}}
+					<li><a href="/insumos">Crear Cita</a></li>
+					<li><a href="/insumos">Ver citas</a></li>
 				</ul>
 			</li>
 			<li>
