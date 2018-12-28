@@ -3,6 +3,8 @@
   <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
     <i class="fa fa-bars"></i>
   </button>
+  @guest()
+  @else
   <ul class="navbar-nav ml-auto mr-md-0">
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,4 +20,5 @@
       </div>
     </li>
   </ul>
+  @endguest
 </nav>
